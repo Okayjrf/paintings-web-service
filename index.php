@@ -1,6 +1,6 @@
 <html>
 <head>
-<title>Bond Web Service Demo</title>
+<title>Painting Web Service Demo</title>
 <style>
   
   body {
@@ -9,13 +9,14 @@
     }
 
   
-    .film{
-    border:1px solid #E77DC2;
-    border-radius: 5px;
-    background-color:#F1F1F1;
-    padding: 5px;
-    margin-bottom:5px;
-    position:relative;   
+  .film {
+      border: 1px solid #E77DC2;
+      border-radius: 5px;
+      background-color:#F1F1F1;
+      padding: 5px;
+      margin-bottom: 5px;
+      position: relative;
+     min-height: 150px;
   }
 
 
@@ -26,7 +27,7 @@
   }
 
   .pic img{
-	max-width:100px;
+	max-width:85px;
   }
 
   h1{
@@ -47,16 +48,12 @@
 function bondTemplate(film){
   return `
     <div class = "film">
-      <b>Film</b>: ${film.Film}<br>
       <b>Title</b>: ${film.Title}<br>
-      <b>Director</b>: ${film.Director}<br>
-      <b>Producers</b>: ${film.Producers}<br>
-      <b>Writers</b>: ${film.Writers}<br>
-      <b>Composer</b>: ${film.Composer}<br>
-      <b>Bond</b>: ${film.Bond}<br>
-      <b>Budget</b>: ${film.Budget}<br>
-      <b>Box Office</b>: ${film.BoxOffice}<br>
-      <div class= "pic"><img src = "thumbnails/${film.Image}"></div>
+      <b>Artist</b>: ${film.Artist}<br>
+      <b>Cost</b>: ${film.Cost}<br>
+      <b>Year</b>: ${film.Year}<br>
+      <b>Note</b>: ${film.Note}<br>
+      <div class= "pic"><img src = "painting_webservice/${film.Image}"></div>
     </div>
   `;
 }
@@ -99,9 +96,9 @@ alert('Error - ' + xhr.status + ': ' + xhr.statusText);
 </script>
 </head>
 	<body>
-	<h1>Bond Web Service</h1>
-		<a href="year" class="category"><strong>Bond Films By Year</a><br /></strong>
-		<a href="box" class="category"><strong>Bond Films By International Box Office Totals</a></strong>
+	<h1>Painting Web Service</h1>
+		<a href="year" class="category"><strong>Painting By Year</a><br /></strong>
+		<a href="box" class="category"><strong>Painting by Price</a></strong>
 		<h3 id="filmtitle">Title Will Go Here</h3>
 		<div id="films">
       <!--
